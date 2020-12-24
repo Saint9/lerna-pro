@@ -1,0 +1,2 @@
+# lerna-gs
+lerna
