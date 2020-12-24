@@ -1,2 +1,2 @@
-# lerna-gs
+# lerna-pro
 lerna
