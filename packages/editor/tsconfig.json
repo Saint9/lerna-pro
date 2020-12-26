@@ -7,7 +7,8 @@
       "ES2017"
     ],
     "target": "ES6",
-    "sourceMap": true
+    "sourceMap": true,
+    "strictNullChecks": false
   },
   "include": [
     "src"
