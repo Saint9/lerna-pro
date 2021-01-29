@@ -2,7 +2,7 @@
   <div class="blank-layout">
     <van-nav-bar title="标题" left-arrow @click-left="onBack">
       <template #right>
-        <slot name="right"></slot>
+        <slot name="nav-right"></slot>
       </template>
     </van-nav-bar>
     <div class="container">
@@ -11,9 +11,7 @@
   </div>
 </template>
 <script>
-import {
-  NavBar
-} from 'vant'
+import { NavBar } from 'vant'
 export default {
   name: 'BlankLayout',
   components: {

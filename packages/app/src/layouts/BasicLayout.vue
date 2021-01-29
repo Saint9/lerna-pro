@@ -1,7 +1,10 @@
 <template>
   <div class="basic-layout">
+    <router-view class="container" />
     <van-tabbar v-model="activeName">
-      <van-tabbar-item name="home" icon="home-o" to="/home">首页</van-tabbar-item>
+      <van-tabbar-item name="home" icon="home-o" to="/home"
+        >首页</van-tabbar-item
+      >
       <van-tabbar-item name="search" icon="search">搜索</van-tabbar-item>
       <van-tabbar-item name="firend" icon="friends-o">好友</van-tabbar-item>
       <van-tabbar-item name="setting" icon="setting-o">设置</van-tabbar-item>

@@ -16,19 +16,13 @@
         placeholder="密码"
         :rules="rules.password"
       />
-      <div style="margin: 16px">
-        <van-button round block type="info" native-type="submit"
-          >提交</van-button
-        >
-      </div>
+      <van-button round block type="info" native-type="submit">提交</van-button>
     </van-form>
   </div>
 </template>
 <script>
-import {
-  Form,
-  Field
-} from 'vant'
+import { Form, Field, Button } from 'vant'
+import './login.less'
 const rules = {
   username: [{ required: true, message: '请填写用户名' }],
   password: [{ required: true, message: '请填写密码' }]
@@ -36,7 +30,8 @@ const rules = {
 export default {
   components: {
     [Form.name]: Form,
-    [Field.name]: Field
+    [Field.name]: Field,
+    [Button.name]: Button
   },
   data () {
     return {
