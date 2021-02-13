@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     onBack () {
-
+      this.$router.back()
     }
   }
 }

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import BasicLayout from '@/layouts/BasicLayout.vue'
-import Home from '@/pages/tabbar/home.vue'
+import Home from '@/pages/tabbar/home/index.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +16,12 @@ const routes = [
         name: 'Home',
         meta: { title: '首页' },
         component: Home
+      },
+      {
+        path: '/list',
+        name: 'TabbarList',
+        meta: { title: '列表' },
+        component: () => import('@/pages/tabbar/list/index.vue')
       }
     ]
   },

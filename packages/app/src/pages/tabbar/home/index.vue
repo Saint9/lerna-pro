@@ -2,7 +2,7 @@
   <div class="tabbar-home">home</div>
 </template>
 <script>
-import './home.less'
+import './index.less'
 export default {
 
 }
