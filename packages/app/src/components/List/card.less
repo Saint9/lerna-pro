@@ -1,0 +1,39 @@
+.m-card {
+  display: flex;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #FFF;
+  &-thumb {
+    position: relative;
+    flex: none;
+    width: 88px;
+    height: 88px;
+    margin-right: 8px;
+  }
+  &-content {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    min-height: 88px;
+  }
+  &-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+  }
+  &-desc {
+    overflow: hidden;
+    max-height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    color: #646566;
+    font-size: 12px;
+  }
+}
+.m-card + .m-card {
+  margin-top: 15px;
+}
