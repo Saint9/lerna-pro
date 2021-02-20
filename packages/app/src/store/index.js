@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex, { createLogger } from 'vuex'
-
+import { isProd } from '../app.config'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -19,5 +19,5 @@ export default new Vuex.Store({
   },
   modules: {
   },
-  plugins: [createLogger()]
+  plugins: isProd ? [] : [createLogger()]
 })

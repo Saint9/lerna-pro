@@ -1,2 +1,2 @@
 import './var.less'
-import './global.less'
+import './common.less'
