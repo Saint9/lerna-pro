@@ -6,6 +6,7 @@
         v-model="telephone"
         name="telephone"
         type="tel"
+        maxlength="11"
         left-icon="contact"
         placeholder="手机号"
         :rules="rules.telephone"
@@ -23,14 +24,19 @@
       </van-field>
       <van-button block type="info" native-type="submit">登录</van-button>
     </van-form>
+    <div class="link-cell">
+      <router-link to="/home">忘记密码？</router-link>
+      <router-link to="/home">注册</router-link>
+    </div>
   </div>
 </template>
 <script>
 import { Form, Field, Icon, Button } from 'vant'
+import { phone } from '@/utils/regexp'
 import './login.less'
 const IconLock = require('@/assets/icon-lock.svg')
 const rules = {
-  telephone: [{ required: true, message: '请填写手机号' }],
+  telephone: [{ required: true, message: '请填写手机号' }, { pattern: phone, message: '手机号码格式错误' }],
   password: [{ required: true, message: '请填写密码' }]
 }
 export default {
