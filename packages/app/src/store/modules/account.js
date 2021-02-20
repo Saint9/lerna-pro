@@ -1,6 +1,7 @@
+import axios from '@/utils/request'
 // initial state
 const state = () => ({
-  all: []
+  userInfo: {}
 })
 
 // getters
@@ -8,22 +9,20 @@ const getters = {}
 
 // actions
 const actions = {
-  getAllProducts ({ commit }) {
-    shop.getProducts(products => {
-      commit('setProducts', products)
-    })
+  async GetUserInfo ({ commit }) {
+    const { data } = await axios.post('/mock/userInfo')
+    console.log(data)
+    commit('SET_USER_INFO', data)
+  },
+  Logout ({ commit }) {
+    commit('SET_USER_INFO', {})
   }
 }
 
 // mutations
 const mutations = {
-  setProducts (state, products) {
-    state.all = products
-  },
-
-  decrementProductInventory (state, { id }) {
-    const product = state.all.find(product => product.id === id)
-    product.inventory--
+  SET_USER_INFO (state, userInfo) {
+    state.userInfo = userInfo
   }
 }
 
