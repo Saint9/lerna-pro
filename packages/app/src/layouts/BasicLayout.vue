@@ -1,7 +1,7 @@
 <template>
   <div class="basic-layout">
     <router-view class="container" />
-    <van-tabbar v-model="activeName">
+    <van-tabbar route>
       <van-tabbar-item name="home" icon="home-o" to="/home"
         >首页</van-tabbar-item
       >
@@ -30,7 +30,6 @@ export default {
   },
   data () {
     return {
-      activeName: 'home',
       icon: {
         listActive,
         listInactive
