@@ -11,10 +11,24 @@
           <m-card
             v-for="item in dataList"
             :key="item.id"
-            :thumb="item.thumb"
-            :title="item.title"
-            :desc="item.description"
-          />
+            :thumb="getValue(item, 'thumb')"
+            :title="getValue(item, 'title')"
+            :desc="getValue(item, 'desc')"
+            :date="getValue(item, 'date')"
+          >
+            <template v-if="$scopedSlots.thumb" #thumb>
+              <slot name="thumb"></slot>
+            </template>
+            <template v-if="$scopedSlots.title" #title>
+              <slot name="title"></slot>
+            </template>
+            <template v-if="$scopedSlots.desc" #desc>
+              <slot name="desc"></slot>
+            </template>
+            <template v-if="$scopedSlots.date" #date>
+              <slot name="date"></slot>
+            </template>
+          </m-card>
         </template>
       </slot>
     </mescroll-vue>
@@ -59,7 +73,24 @@ export default {
       dataList: [] // 列表数据
     }
   },
+  // computed: {
+  //   showThumb: function () {
+  //     console.log(this.$scopedSlots)
+  //     console.log(this.$props.thumb)
+  //     return this.$scopedSlots.thumb || this.$props.thumb
+  //   }
+  // },
+  mounted () {
+    // console.log(CardProps)
+    // console.log(this.$scopedSlots.date())
+  },
   methods: {
+    getValue (item, key) {
+      const val = this.$props[key]
+      if (val in item) {
+        return item[val]
+      }
+    },
     mescrollInit (mescroll) {
       console.log(mescroll)
       // if (this.url) {
@@ -70,17 +101,13 @@ export default {
     upCallback (page, mescroll) {
       const { num, size } = page
       this.axiosList({ pageNo: num, pageSize: size }, mescroll)
-      console.log(mescroll)
     },
     async axiosList (params, mescroll) {
       try {
         const { list, total } = await this.$axios.post(this.url, params)
-        console.log(list)
         if (params.pageNo === 1) this.dataList = []
         this.dataList = this.dataList.concat(list)
         this.$nextTick(() => {
-          console.log(this.dataList.length)
-          console.log(total)
           mescroll.endBySize(list.length, total)
         })
       } catch (error) {

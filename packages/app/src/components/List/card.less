@@ -3,14 +3,14 @@
   padding: 10px 15px;
   border-radius: 10px;
   background-color: #FFF;
-  &-thumb {
+  &__thumb {
     position: relative;
     flex: none;
     width: 88px;
     height: 88px;
     margin-right: 8px;
   }
-  &-content {
+  &__content {
     position: relative;
     display: flex;
     flex: 1;
@@ -19,17 +19,21 @@
     min-width: 0;
     min-height: 88px;
   }
-  &-title {
+  &__title {
     margin: 0;
     font-size: 15px;
     font-weight: normal;
   }
-  &-desc {
+  &__desc {
     overflow: hidden;
     max-height: 20px;
     white-space: nowrap;
     text-overflow: ellipsis;
     line-height: 20px;
+    color: #646566;
+    font-size: 12px;
+  }
+  &__date {
     color: #646566;
     font-size: 12px;
   }
