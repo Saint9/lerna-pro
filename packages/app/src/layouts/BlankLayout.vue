@@ -2,7 +2,7 @@
   <div class="blank-layout">
     <van-nav-bar title="标题" left-arrow @click-left="onBack">
       <template #right>
-        <slot name="nav-right"></slot>
+        <slot name="right"></slot>
       </template>
     </van-nav-bar>
     <div class="container">

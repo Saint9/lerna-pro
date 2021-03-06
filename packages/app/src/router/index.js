@@ -18,10 +18,16 @@ const routes = [
         component: Home
       },
       {
-        path: '/list',
+        path: '/tabbar/list',
         name: 'TabbarList',
         meta: { title: '列表' },
         component: () => import('@/pages/tabbar/list/index.vue')
+      },
+      {
+        path: '/tabbar/form',
+        name: 'TabbarForm',
+        meta: { title: '表单' },
+        component: () => import('@/pages/tabbar/form/index.vue')
       }
     ]
   },
